@@ -1,5 +1,4 @@
 import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
 import Link from 'next/link'
 
 const blogs = [
@@ -51,7 +50,6 @@ export default function BlogPage() {
                     </div>
                 </div>
             </section>
-            <Footer />
         </main>
     )
 } 

@@ -101,12 +101,13 @@ const projects = [
 
 export default function ProjectsPage() {
     return (
-        <main className="min-h-screen" style={{ backgroundColor: '#000' }}>
-            <section className="pt-32 pb-20" style={{ backgroundColor: '#000' }}>
+        <main className="min-h-screen bg-dark-900">
+            <Navigation />
+            <section className="pt-32 pb-20 bg-dark-900">
                 <div className="max-w-7xl  px-4 sm:px-6 lg:px-20">
                     <div className="text-left mb-16">
                         <h1 className="text-4xl md:text-5xl font-bold text-left text-white mb-2">
-                            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #5c7f6c 60%, #fff 100%)' }}>Projects</span>
+                            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #5c7f6c 60%, #fff 100%)' }}>Skills</span>
                         </h1>
 
                     </div>
@@ -116,14 +117,7 @@ export default function ProjectsPage() {
                         {projects.map((project, idx) => (
                             <div
                                 key={idx}
-                                className="flex flex-col items-center gap-6 rounded-3xl p-6 md:p-10 shadow-xl border-2"
-                                style={{
-                                    background: 'rgba(0,0,0,0.40)',
-                                    backdropFilter: 'blur(16px)',
-                                    WebkitBackdropFilter: 'blur(16px)',
-                                    borderColor: '#5c7f6c',
-                                    boxShadow: '0 8px 32px 0 #5c7f6c22'
-                                }}
+                                className={`flex flex-col items-center gap-6 rounded-2xl p-4 md:p-6 shadow-lg border border-dark-700 bg-dark-800 ${shadowColors[idx % shadowColors.length]}`}
                             >
                                 {/* Image/Preview at Top */}
                                 <div className="w-full flex items-center justify-center">
@@ -138,10 +132,10 @@ export default function ProjectsPage() {
                                 {/* Details at Bottom */}
                                 <div className="w-full flex flex-col justify-center">
                                     <div className="mb-2 flex items-center gap-3">
-                                        <span className="px-3 py-1 text-xs font-medium rounded-full" style={{ background: '#5c7f6c22', color: '#5c7f6c' }}>
+                                        <span className="px-3 py-1 bg-primary-500/10 text-primary-400 text-xs font-medium rounded-full">
                                             {project.category}
                                         </span>
-                                        <span className="text-gray-400 text-sm">{project.year}</span>
+                                        <span className="text-gray-500 text-sm">{project.year}</span>
                                     </div>
                                     <h3 className="text-2xl font-semibold text-white mb-2">
                                         {project.name}
@@ -153,8 +147,7 @@ export default function ProjectsPage() {
                                         {project.tech.map((tech, i) => (
                                             <span
                                                 key={i}
-                                                className="px-2 py-1 text-xs rounded font-semibold"
-                                                style={{ background: '#5c7f6c22', color: '#5c7f6c', border: '1px solid #5c7f6c55' }}
+                                                className={`px-2 py-1 text-xs rounded border border-dark-600 font-semibold ${techColors[tech] || 'bg-dark-700 text-gray-300'}`}
                                             >
                                                 {tech}
                                             </span>
