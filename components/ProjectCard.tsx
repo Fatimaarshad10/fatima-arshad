@@ -29,78 +29,60 @@ const ProjectCard = ({
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className={`group relative bg-dark-800 rounded-xl overflow-hidden border border-dark-700 hover:border-primary-500/50 transition-all duration-300 ${featured ? 'ring-2 ring-primary-500/20' : ''
-                }`}
+            className="group relative flex flex-col bg-dark-800 rounded-xl overflow-hidden border border-dark-700 hover:border-primary-500/50 transition-all duration-300"
         >
-            {/* Project Image */}
             <div className="relative h-48 overflow-hidden">
                 <Image
                     src={image}
                     alt={title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/80 to-transparent" />
+                {featured && (
+                    <span className="absolute top-4 left-4 px-3 py-1 bg-primary-500/20 text-primary-400 text-xs font-medium rounded-full border border-primary-500/30">
+                        Featured
+                    </span>
+                )}
+            </div>
 
-                {/* Action Buttons */}
-                <div className="absolute inset-0 flex items-center justify-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {liveUrl && (
-                        <a
-                            href={liveUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-3 bg-primary-600 hover:bg-primary-700 rounded-lg transition-colors duration-200 text-white"
-                        >
-                            <ExternalLink className="h-5 w-5" />
-                        </a>
-                    )}
+            <div className="p-6 flex flex-col flex-grow">
+                <h3 className="text-xl font-semibold text-dark-500 mb-2 group-hover:text-primary-400 transition-colors duration-300">
+                    {title}
+                </h3>
+                <p className="text-dark-600 mb-4 line-clamp-3 flex-grow">
+                    {description}
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                    {technologies.map((tech) => (
+                        <span key={tech} className="px-3 py-1 bg-dark-700 text-dark-600 text-xs rounded-full">
+                            {tech}
+                        </span>
+                    ))}
+                </div>
+                <div className="mt-auto flex items-center justify-end space-x-2">
                     {githubUrl && (
                         <a
                             href={githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-3 bg-dark-700 hover:bg-dark-600 rounded-lg transition-colors duration-200 text-white"
+                            className="p-2 text-dark-600 hover:text-primary-400 transition-colors duration-300"
+                            title="View on GitHub"
                         >
                             <Github className="h-5 w-5" />
                         </a>
                     )}
-                </div>
-            </div>
-
-            {/* Project Content */}
-            <div className="p-6">
-                {featured && (
-                    <span className="inline-block px-3 py-1 bg-primary-500/10 text-primary-400 text-xs font-medium rounded-full mb-3">
-                        Featured Project
-                    </span>
-                )}
-
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors duration-200">
-                    {title}
-                </h3>
-
-                <p className="text-gray-400 mb-4 line-clamp-3">
-                    {description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                    {technologies.map((tech, index) => (
-                        <span
-                            key={index}
-                            className="px-3 py-1 bg-dark-700 text-gray-300 text-xs rounded-full border border-dark-600"
+                    {liveUrl && (
+                        <a
+                            href={liveUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="p-2 text-dark-600 hover:text-primary-400 transition-colors duration-300"
+                            title="View Live"
                         >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
-
-                {/* View Project Button */}
-                <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">
-                        {featured ? 'Featured Project' : 'View Details'}
-                    </span>
-                    <Eye className="h-4 w-4 text-gray-500 group-hover:text-primary-400 transition-colors duration-200" />
+                            <ExternalLink className="h-5 w-5" />
+                        </a>
+                    )}
                 </div>
             </div>
         </motion.div>

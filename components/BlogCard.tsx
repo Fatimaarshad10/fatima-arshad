@@ -47,14 +47,14 @@ const BlogCard = ({
 
                 {/* Category Badge */}
                 <div className="absolute top-4 left-4">
-                    <span className="inline-block px-3 py-1 bg-primary-600 text-white text-xs font-medium rounded-full">
+                    <span className="inline-block px-3 py-1 bg-primary-500 text-dark-900 text-xs font-medium rounded-full">
                         {category}
                     </span>
                 </div>
 
                 {featured && (
                     <div className="absolute top-4 right-4">
-                        <span className="inline-block px-3 py-1 bg-yellow-600 text-white text-xs font-medium rounded-full">
+                        <span className="inline-block px-3 py-1 bg-primary-400 text-dark-900 text-xs font-medium rounded-full">
                             Featured
                         </span>
                     </div>
@@ -63,7 +63,7 @@ const BlogCard = ({
 
             {/* Blog Content */}
             <div className="p-6">
-                <div className="flex items-center space-x-4 text-sm text-gray-400 mb-3">
+                <div className="flex items-center space-x-4 text-sm text-dark-600 mb-3">
                     <div className="flex items-center space-x-1">
                         <Calendar className="h-4 w-4" />
                         <span>{date}</span>
@@ -74,18 +74,18 @@ const BlogCard = ({
                     </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-primary-400 transition-colors duration-200 line-clamp-2">
+                <h3 className="text-xl font-semibold text-dark-500 mb-3 group-hover:text-primary-500 transition-colors duration-200 line-clamp-2">
                     {title}
                 </h3>
 
-                <p className="text-gray-400 mb-4 line-clamp-3">
+                <p className="text-dark-600 mb-4 line-clamp-3">
                     {excerpt}
                 </p>
 
                 {/* Read More Link */}
                 <Link
                     href={`/blog/${slug}`}
-                    className="inline-flex items-center text-primary-400 hover:text-primary-300 font-medium transition-colors duration-200 group/link"
+                    className="inline-flex items-center text-primary-500 hover:text-primary-400 font-medium transition-colors duration-200 group/link"
                 >
                     Read More
                     <ArrowRight className="ml-2 h-4 w-4 group-hover/link:translate-x-1 transition-transform" />

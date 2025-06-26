@@ -25,27 +25,36 @@ const skills = [
 const SkillCard = ({ skill }: { skill: any }) => {
     const Icon = skill.icon;
     return (
-        <div
-            className="flex flex-col items-center justify-center rounded-xl shadow-md p-6 transition-transform duration-200 hover:scale-105 group"
-            style={{ backgroundColor: '#0000', border: '2px solid #5c7f6c' }}
+        <motion.div
+            className="bg-dark-800 border border-dark-700 rounded-xl p-6 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:border-primary-500/50 hover:shadow-lg hover:shadow-primary-500/10"
+            whileHover={{ y: -5 }}
         >
-            <Icon className={`w-10 h-10 mb-3 ${skill.color} transition-colors duration-200 group-hover:text-[#5c7f6c]`} />
-            <span className="text-base font-semibold text-gray-200 group-hover:text-[#5c7f6c] transition-colors duration-200">{skill.name}</span>
-        </div>
+            <Icon className={`w-12 h-12 ${skill.color}`} />
+            <span className="font-semibold text-dark-500">{skill.name}</span>
+        </motion.div>
     );
 };
 
 const AnimatedSkills = () => {
     return (
-        <section className="w-full" style={{ backgroundColor: '#0000' }}>
-            <div className="max-w-7xl px-4 sm:px-6 lg:px-20 mx-auto">
-                <h1 className="text-4xl md:text-5xl font-bold text-left text-white mb-2">
-                    <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #5c7f6c 60%, #fff 100%)' }}>Skills</span>
-                </h1>
-                <p className="text-lg text-gray-400 mb-10 text-left">Technologies I Use</p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                    {skills.map((skill) => (
-                        <SkillCard key={skill.name} skill={skill} />
+        <section className="py-16 sm:py-24 bg-dark-900">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-extrabold">
+                        My <span className="text-primary-400">Toolkit</span>
+                    </h2>
+                    <p className="mt-4 text-lg text-dark-600">The technologies I use to build modern web experiences.</p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    {skills.map((skill, index) => (
+                        <motion.div
+                            key={skill.name}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.05 }}
+                        >
+                            <SkillCard skill={skill} />
+                        </motion.div>
                     ))}
                 </div>
             </div>

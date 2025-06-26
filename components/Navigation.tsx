@@ -26,18 +26,58 @@ const Navigation = () => {
     ]
 
     return (
-        <nav className="w-full flex justify-center items-center py-8">
-            <div className="backdrop-blur-lg bg-black/40 border border-gray-400/30 rounded-full px-10 py-4 flex space-x-10 shadow-lg">
-                {navItems.map((item) => (
-                    <Link
-                        key={item.name}
-                        href={item.href}
-                        className={`text-lg font-medium transition-colors duration-200 ${pathname === item.href ? 'text-white' : 'text-gray-200 hover:text-white'}`}
-                    >
-                        {item.name}
-                    </Link>
-                ))}
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-dark-900/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'}`}>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-20">
+                    <div className="flex-shrink-0">
+                        <Link href="/" className="text-2xl font-bold text-primary-500 hover:text-primary-400 transition-colors duration-300">
+                            Fatima Arshad
+                        </Link>
+                    </div>
+                    <div className="hidden md:block">
+                        <div className="ml-10 flex items-baseline space-x-4">
+                            {navItems.map((item) => (
+                                <Link
+                                    key={item.name}
+                                    href={item.href}
+                                    className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${pathname === item.href ? 'text-primary-400' : 'text-dark-600 hover:text-primary-400'}`}
+                                >
+                                    {item.name}
+                                    {pathname === item.href && (
+                                        <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1/2 h-0.5 bg-primary-400" />
+                                    )}
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="-mr-2 flex md:hidden">
+                        <button
+                            onClick={() => setIsOpen(!isOpen)}
+                            className="inline-flex items-center justify-center p-2 rounded-md text-dark-600 hover:text-primary-400 hover:bg-dark-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-dark-800 focus:ring-primary-400"
+                        >
+                            <span className="sr-only">Open main menu</span>
+                            {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
+                        </button>
+                    </div>
+                </div>
             </div>
+
+            {isOpen && (
+                <div className="md:hidden">
+                    <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.name}
+                                href={item.href}
+                                onClick={() => setIsOpen(false)}
+                                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${pathname === item.href ? 'bg-dark-700 text-primary-400' : 'text-dark-600 hover:bg-dark-800 hover:text-primary-400'}`}
+                            >
+                                {item.name}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            )}
         </nav>
     )
 }

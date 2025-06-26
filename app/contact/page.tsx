@@ -1,24 +1,23 @@
-import Navigation from '@/components/Navigation'
-import Footer from '@/components/Footer'
+import ContactForm from '@/components/ContactForm'
 
 export default function ContactPage() {
     return (
-        <main className="min-h-screen" style={{ backgroundColor: '#000' }}>
-            <Navigation />
-            <section className="pt-32 pb-20" style={{ backgroundColor: '#000' }}>
-                <div className="max-w-2xl mx-auto px-4">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-10 text-center">
-                        <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #5c7f6c 60%, #fff 100%)' }}>Contact</span> Me
-                    </h1>
-                    <div className="mb-8 text-center">
-                        <p className="text-lg text-white">
-                            Do you have a project in mind? Want to hire me? or simply wanna chat? Feel free to email me at
-                            <a href="mailto:fatimaarshad091@gmail.com" className="ml-1 no-underline" style={{ color: '#5c7f6c' }}>fatimaarshad091@gmail.com</a>
-                        </p>
+        <main className="bg-dark-900 text-dark-600">
+            <div className="pt-24">
+                <section className="py-16 sm:py-24">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-16">
+                            <h1 className="text-4xl md:text-6xl font-extrabold">
+                                Get in <span className="text-primary-500">Touch</span>
+                            </h1>
+                            <p className="mt-4 text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
+                                I'd love to hear from you. Let's build something great together.
+                            </p>
+                        </div>
+                        <ContactForm />
                     </div>
-                </div>
-            </section>
-            <Footer />
+                </section>
+            </div>
         </main>
     )
-} 
+}

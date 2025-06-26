@@ -70,7 +70,6 @@ export default function BlogDetailsPage({ params }: BlogDetailsPageProps) {
                     </div>
                 </div>
             </section>
-            <Footer />
         </main>
     )
 } 

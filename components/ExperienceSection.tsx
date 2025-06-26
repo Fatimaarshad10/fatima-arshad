@@ -43,55 +43,53 @@ export default function ExperienceSection() {
     const [active, setActive] = useState(0);
 
     return (
-        <section id="experience" className="py-20" style={{ backgroundColor: '#000' }}>
-            <div className="max-w-7xl px-4 sm:px-6 lg:px-20 mx-auto mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-left text-white mb-10">
-                    <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #5c7f6c 60%, #fff 100%)' }}>Experience</span>
-                </h1>
-            </div>
-            <div className="max-w-7xl  px-4 sm:px-6 lg:px-20 flex flex-col md:flex-row gap-8">
-                {/* Left: Companies/roles */}
-                <div className="md:w-1/4 flex flex-col relative">
-                    {/* Vertical line */}
-                    <div className="absolute left-4 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#5c7f6c33', zIndex: 0 }} />
-                    {experiences.map((exp, idx) => (
-                        <button
-                            key={exp.company}
-                            onClick={() => setActive(idx)}
-                            className={`text-left px-6 py-2  text-base md:text-lg border-l-4 transition-all duration-200 focus:outline-none relative z-10 ${active === idx
-                                ? 'font-semibold' : ''}`}
-                            style={active === idx
-                                ? { borderColor: '#5c7f6c', color: '#5c7f6c', background: '#0000' }
-                                : { borderColor: 'transparent', color: '#aaa', background: 'transparent' }}
-                        >
-                            {exp.company}
-                        </button>
-                    ))}
+        <section id="experience" className="py-16 sm:py-24 bg-dark-800/50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl md:text-4xl font-extrabold">
+                        Professional <span className="text-primary-400">Experience</span>
+                    </h2>
+                    <p className="mt-4 text-lg text-dark-600">My journey in the world of technology.</p>
                 </div>
 
-                {/* Right: Details */}
-                <div className="md:w-3/4">
-                    <motion.div
-                        key={active}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4 }}
-                        className="rounded-xl p-8 shadow-lg min-h-[180px] flex flex-col justify-center"
-                        style={{ border: '2px solid #5c7f6c', background: '#0000' }}
-                    >
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                            {experiences[active].role} <span className="text-primary-400">@{experiences[active].company}</span>
-                        </h3>
-                        <div className="text-gray-400 font-mono mb-4 text-base">{experiences[active].date}</div>
-                        <ul className="space-y-3">
-                            {experiences[active].highlights.map((h, i) => (
-                                <li key={i} className="flex items-start gap-2 text-lg text-gray-300">
-                                    <span className="text-primary-400 mt-1"><ArrowRight size={18} /></span>
-                                    <span>{h}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                <div className="flex flex-col md:flex-row gap-8">
+                    <div className="md:w-1/4 flex flex-col">
+                        {experiences.map((exp, idx) => (
+                            <button
+                                key={exp.company}
+                                onClick={() => setActive(idx)}
+                                className={`text-left p-4 rounded-lg transition-all duration-300 focus:outline-none ${active === idx ? 'bg-dark-700 text-primary-400' : 'text-dark-600 hover:bg-dark-700/50 hover:text-dark-500'}`}
+                            >
+                                <span className="font-semibold">{exp.company}</span>
+                            </button>
+                        ))}
+                    </div>
+
+                    <div className="md:w-3/4">
+                        <motion.div
+                            key={active}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5 }}
+                            className="bg-dark-800 rounded-xl p-8 shadow-lg border border-dark-700"
+                        >
+                            <h3 className="text-2xl font-bold text-dark-500 mb-1">
+                                {experiences[active].role}
+                            </h3>
+                            <p className="text-primary-400 font-medium mb-2">@{experiences[active].company}</p>
+                            <p className="text-dark-600 font-mono text-sm mb-4">{experiences[active].date}</p>
+                            <ul className="space-y-3">
+                                {experiences[active].highlights.map((h, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <span className="text-primary-500 mt-1 flex-shrink-0">
+                                            <ArrowRight size={18} />
+                                        </span>
+                                        <span className="text-dark-600">{h}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
         </section>

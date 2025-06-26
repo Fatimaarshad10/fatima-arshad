@@ -99,97 +99,40 @@ const projects = [
     }
 ]
 
+import ProjectCard from '@/components/ProjectCard'
+
 export default function ProjectsPage() {
     return (
-        <main className="min-h-screen" style={{ backgroundColor: '#000' }}>
-            <section className="pt-32 pb-20" style={{ backgroundColor: '#000' }}>
-                <div className="max-w-7xl  px-4 sm:px-6 lg:px-20">
-                    <div className="text-left mb-16">
-                        <h1 className="text-4xl md:text-5xl font-bold text-left text-white mb-2">
-                            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(90deg, #5c7f6c 60%, #fff 100%)' }}>Projects</span>
-                        </h1>
+        <main className="bg-dark-900 text-dark-500">
+            <div className="pt-24">
+                <section className="py-16 sm:py-24">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-16">
+                            <h1 className="text-4xl md:text-6xl font-extrabold">
+                                My <span className="text-primary-400">Projects</span>
+                            </h1>
+                            <p className="mt-4 text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
+                                A collection of my work, from full-stack applications to AI-powered tools.
+                            </p>
+                        </div>
 
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {projects.map((project, index) => (
+                                <ProjectCard
+                                    key={index}
+                                    title={project.name}
+                                    description={project.description}
+                                    image={project.image}
+                                    technologies={project.tech}
+                                    liveUrl={project.liveUrl}
+                                    githubUrl={project.githubUrl}
+                                    featured={index === 0} // Example: make the first project featured
+                                />
+                            ))}
+                        </div>
                     </div>
-
-                    {/* Project List - 3 per row, colored shadow */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-                        {projects.map((project, idx) => (
-                            <div
-                                key={idx}
-                                className="flex flex-col items-center gap-6 rounded-3xl p-6 md:p-10 shadow-xl border-2"
-                                style={{
-                                    background: 'rgba(0,0,0,0.40)',
-                                    backdropFilter: 'blur(16px)',
-                                    WebkitBackdropFilter: 'blur(16px)',
-                                    borderColor: '#5c7f6c',
-                                    boxShadow: '0 8px 32px 0 #5c7f6c22'
-                                }}
-                            >
-                                {/* Image/Preview at Top */}
-                                <div className="w-full flex items-center justify-center">
-                                    <div className="bg-white/5 rounded-2xl overflow-hidden shadow-md flex items-center justify-center w-full h-[160px] md:h-[180px]">
-                                        <img
-                                            src={project.image}
-                                            alt={project.name}
-                                            className="object-contain w-full h-full"
-                                        />
-                                    </div>
-                                </div>
-                                {/* Details at Bottom */}
-                                <div className="w-full flex flex-col justify-center">
-                                    <div className="mb-2 flex items-center gap-3">
-                                        <span className="px-3 py-1 text-xs font-medium rounded-full" style={{ background: '#5c7f6c22', color: '#5c7f6c' }}>
-                                            {project.category}
-                                        </span>
-                                        <span className="text-gray-400 text-sm">{project.year}</span>
-                                    </div>
-                                    <h3 className="text-2xl font-semibold text-white mb-2">
-                                        {project.name}
-                                    </h3>
-                                    <p className="text-gray-300 mb-4">
-                                        {project.description}
-                                    </p>
-                                    <div className="mb-4 flex flex-wrap gap-2">
-                                        {project.tech.map((tech, i) => (
-                                            <span
-                                                key={i}
-                                                className="px-2 py-1 text-xs rounded font-semibold"
-                                                style={{ background: '#5c7f6c22', color: '#5c7f6c', border: '1px solid #5c7f6c55' }}
-                                            >
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-                                    <div className="flex items-center gap-4 mt-auto">
-                                        <a
-                                            href={project.liveUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-primary-400 hover:text-primary-300 transition-colors duration-200"
-                                            title="Live Demo"
-                                        >
-                                            <ExternalLink className="h-5 w-5" />
-                                        </a>
-                                        <a
-                                            href={project.githubUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-gray-400 hover:text-white transition-colors duration-200"
-                                            title="Source Code"
-                                        >
-                                            <Github className="h-5 w-5" />
-                                        </a>
-                                        <div className="flex items-center space-x-1 text-gray-500 text-sm ml-auto">
-                                            <Code className="h-4 w-4" />
-                                            <span>{project.tech.length} tech</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
     )
 } 

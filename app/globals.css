@@ -18,13 +18,8 @@ body {
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: #c9d1d9;
+  background-color: #0d1117;
 }
 
 a {
@@ -44,16 +39,16 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #161b22;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
+  background: #00bcd4;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2563eb;
+  background: #00acc1;
 }
 
 /* Smooth scrolling */
@@ -77,7 +72,7 @@ html {
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  background: linear-gradient(135deg, #00bcd4, #00838f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
