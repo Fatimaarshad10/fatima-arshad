@@ -1,4 +1,4 @@
-import ContactForm from '@/components/ContactForm'
+import { Mail } from 'lucide-react'
 
 export default function ContactPage() {
     return (
@@ -14,7 +14,15 @@ export default function ContactPage() {
                                 I'd love to hear from you. Let's build something great together.
                             </p>
                         </div>
-                        <ContactForm />
+                        <div className="text-center">
+                            <a
+                                href="mailto:fatimaarshad091@gmail.com"
+                                className="group inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-dark-900 font-semibold rounded-lg transition-all duration-300 hover:bg-primary-600 transform hover:scale-105"
+                            >
+                                <Mail className="mr-3 h-6 w-6" />
+                                Contact Me
+                            </a>
+                        </div>
                     </div>
                 </section>
             </div>

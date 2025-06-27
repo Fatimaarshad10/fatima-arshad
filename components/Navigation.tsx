@@ -19,8 +19,8 @@ const Navigation = () => {
     }, [])
 
     const navItems = [
-        { name: 'About', href: '/about' },
-        { name: 'Projects', href: '/projects' },
+        { name: 'About', href: '#about' },
+        { name: 'Projects', href: '#projects' },
         { name: 'Blog', href: '/blog' },
         { name: 'Contact', href: '/contact' },
     ]
@@ -41,6 +41,12 @@ const Navigation = () => {
                                     key={item.name}
                                     href={item.href}
                                     className={`relative px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ${pathname === item.href ? 'text-primary-400' : 'text-dark-600 hover:text-primary-400'}`}
+                                    onClick={(e) => {
+                                        if (item.href.startsWith('#')) {
+                                            e.preventDefault()
+                                            document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })
+                                        }
+                                    }}
                                 >
                                     {item.name}
                                     {pathname === item.href && (
@@ -69,7 +75,13 @@ const Navigation = () => {
                             <Link
                                 key={item.name}
                                 href={item.href}
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    setIsOpen(false)
+                                    if (item.href.startsWith('#')) {
+                                        e.preventDefault()
+                                        document.querySelector(item.href)?.scrollIntoView({ behavior: 'smooth' })
+                                    }
+                                }}
                                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-300 ${pathname === item.href ? 'bg-dark-700 text-primary-400' : 'text-dark-600 hover:bg-dark-800 hover:text-primary-400'}`}
                             >
                                 {item.name}

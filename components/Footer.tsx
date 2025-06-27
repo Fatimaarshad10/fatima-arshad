@@ -18,7 +18,6 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-center justify-between">
                     <div className="text-center md:text-left mb-4 md:mb-0">
                         <p>&copy; {new Date().getFullYear()} Fatima Arshad. All rights reserved.</p>
-                        <p className="text-sm">Designed and developed with ❤️</p>
                     </div>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
