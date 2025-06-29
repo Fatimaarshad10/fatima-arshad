@@ -29,7 +29,7 @@ const Footer = () => {
                             href="https://github.com/Fatimaarshad10"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 rounded-full text-dark-600 hover:text-primary-400 hover:bg-dark-700 transition-all duration-300"
+                            className="p-2 rounded-full  text-primary-400 bg-dark-700 transition-all duration-300"
                             title="GitHub"
                         >
                             <Github className="h-6 w-6" />
@@ -38,14 +38,16 @@ const Footer = () => {
                             href="https://www.linkedin.com/in/fatima-arshad-6ba52a184/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="p-2 rounded-full text-dark-600 hover:text-primary-400 hover:bg-dark-700 transition-all duration-300"
+                            className="p-2 rounded-full  text-primary-400 bg-dark-700 transition-all duration-300"
+
                             title="LinkedIn"
                         >
                             <Linkedin className="h-6 w-6" />
                         </a>
                         <a
                             href="mailto:fatimaarshad091@gmail.com"
-                            className="p-2 rounded-full text-dark-600 hover:text-primary-400 hover:bg-dark-700 transition-all duration-300"
+                            className="p-2 rounded-full  text-primary-400 bg-dark-700 transition-all duration-300"
+
                             title="Email"
                         >
                             <Mail className="h-6 w-6" />

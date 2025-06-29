@@ -35,25 +35,28 @@ a {
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
+  background: #18181b;
 }
 
 ::-webkit-scrollbar-track {
-  background: #161b22;
+  background: #18181b;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00bcd4;
-  border-radius: 4px;
+  background: #00af91;
+  border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00acc1;
+  background: #089981;
 }
 
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+  scrollbar-color: #00af91 #18181b;
+  scrollbar-width: thin;
 }
 
 /* Custom animations */

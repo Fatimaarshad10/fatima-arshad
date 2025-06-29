@@ -3,15 +3,9 @@ import AboutSection from '@/components/AboutSection'
 import ExperienceSection from '@/components/ExperienceSection'
 import AnimatedSkills from '@/components/AnimatedSkills'
 import ProjectsSection from '@/components/ProjectsSection'
-import { getSortedPostsData } from '@/lib/posts'
-import BlogCard from '@/components/BlogCard'
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { Mail } from 'lucide-react'
 
 export default function Page() {
-    const allPosts = getSortedPostsData()
-    const recentPosts = allPosts.slice(0, 3)
-
     return (
         <>
             <Hero />
@@ -19,28 +13,29 @@ export default function Page() {
             <ExperienceSection />
             <AnimatedSkills />
             <ProjectsSection />
+            <main className="bg-dark-900 text-dark-600">
+                <section id="contact" className="py-16 sm:py-24">
+                    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div className="text-center mb-16">
+                            <h1 className="text-4xl md:text-6xl font-extrabold">
+                                Get in <span className="text-primary-500">Touch</span>
+                            </h1>
+                            <p className="mt-4 text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
+                                I'd love to hear from you. Let's build something great together.
+                                <a
+                                    href="mailto:fatimaarshad091@gmail.com"
+                                    className="group inline-flex items-center justify-center text-primary-500  underline font-semibold rounded-lg transition-all duration-300  transform hover:scale-105"
+                                >
+                                    fatimaarshad091@gmail.com
+                                </a>
+                            </p>
+                        </div>
+                        <div className="text-center">
 
-            <section className="py-20 md:py-32 bg-dark-800">
-                <div className="container mx-auto px-4">
-                    <div className="flex justify-between items-center mb-12">
-                        <h2 className="text-4xl md:text-5xl font-bold text-dark-500">
-                            Recent Insights
-                        </h2>
-                        <Link
-                            href="/blog"
-                            className="group inline-flex items-center text-primary-500 hover:text-primary-400 transition-colors"
-                        >
-                            <span>View All Posts</span>
-                            <ArrowRight className="ml-2 h-5 w-5 transform transition-transform duration-300 group-hover:translate-x-1" />
-                        </Link>
+                        </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {recentPosts.map(post => (
-                            <BlogCard key={post.id} post={post} />
-                        ))}
-                    </div>
-                </div>
-            </section>
+                </section>
+            </main>
         </>
     )
 }

@@ -3,66 +3,65 @@
 import ProjectCard from '@/components/ProjectCard'
 
 const projects = [
-    {
-        name: 'E-Commerce Platform',
-        description: 'A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.',
-        tech: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-        image: '/api/placeholder/400/300',
-        liveUrl: 'https://example.com',
-        githubUrl: 'https://github.com',
-        year: '2024',
-        category: 'Full Stack'
+ {
+        name: 'Molar App',
+        description: 'Real-time weather dashboard with location-based forecasts and interactive maps.',
+        tech: ['Vue.js', 'Node.js', 'OpenWeather API', 'Chart.js'],
+        image: "/assets/molar.png",
+        liveUrl: '',
+        year: '2025',
+        category: 'frontend'
     },
-    {
-        name: 'Task Management App',
-        description: 'Collaborative task management with real-time updates and team features.',
-        tech: ['Next.js', 'TypeScript', 'Socket.io', 'PostgreSQL'],
-        image: '/api/placeholder/400/300',
-        liveUrl: 'https://example.com',
-        githubUrl: 'https://github.com',
-        year: '2024',
-        category: 'Web App'
-    },
-    {
-        name: 'Mobile Fitness Tracker',
-        description: 'Cross-platform app for tracking workouts, nutrition, and fitness goals.',
-        tech: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
-        image: '/api/placeholder/400/300',
-        liveUrl: 'https://example.com',
-        githubUrl: 'https://github.com',
-        year: '2023',
-        category: 'Mobile'
-    },
-    {
-        name: 'AI Chat Application',
-        description: 'Real-time chat application with AI-powered responses and sentiment analysis.',
-        tech: ['Python', 'FastAPI', 'OpenAI', 'WebSocket'],
-        image: '/api/placeholder/400/300',
-        liveUrl: 'https://example.com',
-        githubUrl: 'https://github.com',
-        year: '2023',
-        category: 'AI/ML'
-    },
-    {
-        name: 'Portfolio Website',
+
+{
+        name: 'Pine Straw University',
         description: 'Modern portfolio website built with Next.js and Tailwind CSS.',
         tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-        image: '/api/placeholder/400/300',
-        liveUrl: 'https://example.com',
-        githubUrl: 'https://github.com',
+        image: "/assets/pinestraw.png",
+        liveUrl: 'https://pinestrawuniversity.com/',
         year: '2024',
         category: 'Frontend'
     },
     {
-        name: 'Weather Dashboard',
-        description: 'Real-time weather dashboard with location-based forecasts and interactive maps.',
-        tech: ['Vue.js', 'Node.js', 'OpenWeather API', 'Chart.js'],
-        image: '/api/placeholder/400/300',
-        liveUrl: 'https://example.com',
-        githubUrl: 'https://github.com',
+        name: '321Vets',
+        description: 'Real-time chat application with AI-powered responses and sentiment analysis.',
+        tech: ['Python', 'FastAPI', 'OpenAI', 'WebSocket'],
+        image: "/assets/321.png",
+        liveUrl: 'https://321vets.com/',
         year: '2023',
-        category: 'Web App'
-    }
+        category: 'AI/ML'
+    },
+      
+       {
+        name: 'Tech Wizz',
+        description: 'Cross-platform app for tracking workouts, nutrition, and fitness goals.',
+        tech: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
+        image: "/assets/427shots_so.png",
+        githubUrl: 'https://github.com/Fatimaarshad10/NextJS-Portfolio-',
+        year: '2024',
+        category: 'Frontend'
+    },
+        {
+        name: "Let's Play App ",
+        description: 'A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.',
+        tech: [ 'Node.js', 'Postgresql', 'schedular', 'Express.js'],
+        image: "/assets/Let's_play.png",
+        githubUrl: 'https://github.com/NaxtechGit/Event-Management-System-Backend-',
+        year: '2024',
+        category: 'Full Stack'
+    },
+     {
+        name: 'Profiler',
+        description: 'Cross-platform app for tracking workouts, nutrition, and fitness goals.',
+        tech: ['Node js', 'lambda', 'sqs', 'redis' , 'openai'],
+        image: "/assets/profiler_01.png",
+        liveUrl: 'https://dtkcfwfq66241.cloudfront.net/',
+        year: '2024',
+        category: 'Backend developer'
+    },
+  
+   
+     
 ]
 
 const ProjectsSection = () => {
