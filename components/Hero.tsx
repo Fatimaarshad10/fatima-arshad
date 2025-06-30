@@ -50,7 +50,7 @@ const Hero = () => {
                         className="mb-4"
                     >
                         <span className="inline-block bg-primary-500/10 text-primary-400 border border-primary-500/20 px-3 py-2 md:px-4 md:py-2 rounded-full font-medium text-sm md:text-base">
-                            Full-Stack Developer & Corporate Trainer
+                            Full-Stack Developer 
                         </span>
                     </motion.div>
 
