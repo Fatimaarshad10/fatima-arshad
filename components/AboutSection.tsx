@@ -19,7 +19,7 @@ const AboutSection = () => {
                         <span className="text-primary-500">About</span> Me
                     </h1>
                     <p className="mt-4 text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
-                        A passionate developer and educator on a mission to build exceptional digital experiences.
+                        A passionate developer driven to craft impactful and innovative digital solutions that enhance user experiences
                     </p>
                 </motion.div>
 
@@ -54,17 +54,22 @@ const AboutSection = () => {
                         viewport={{ once: true }}
                         className="relative order-1 lg:order-2"
                     >
-                        <div className="relative prose prose-invert prose-lg text-dark-600 lg:pl-8 p-4 backdrop-blur-sm z-10">
+                        <div className="relative prose prose-invert prose-lg text-dark-600 lg:pl-8 p-4 backdrop-blur-sm z-10 text-justify">
                             <p>
-                                My journey into web development began with a simple curiosity about how websites work. This curiosity quickly blossomed into a passion that has driven my career for the past three years.
+                                My journey began with a passion for art and digital drawing, which soon evolved into a fascination with technology. At 13, I was creating digital sketches; today, I build scalable web applications.
                             </p>
                             <p>
-                                I've had the privilege of working on a wide range of projects, from e-commerce platforms to mobile apps, always striving to push the boundaries of what's possible with modern technology. My participation in international hackathons has honed my skills in rapid prototyping, teamwork, and creative problem-solving.
+                                Transitioning from art to programming was challenging, especially in male-dominated spaces. Through perseverance, I taught myself full-stack development and delivered real-world MERN projects.
                             </p>
                             <p>
-                                As a dedicated trainer, I've empowered over 600 students to master web development, sharing not only technical expertise but also the mindset required to thrive in this dynamic industry.
+                                This journey inspired me to become an educator. I have trained over 600 students, empowering beginners to find their path in tech. Teaching has strengthened my confidence, communication, and sense of purpose.
+                            </p>
+                            <p>
+                                Now, I work as a full-stack developer, collaborate globally, and contribute to international hackathons. I am <span className="text-primary-500 font-bold">Fatima Arshad</span> — a creator, motivator, and passionate problem-solver on a mission to make an impact through technology.
                             </p>
                         </div>
+
+
                     </motion.div>
                 </div>
             </div>

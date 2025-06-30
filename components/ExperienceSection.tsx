@@ -6,36 +6,58 @@ import { ArrowRight } from 'lucide-react';
 
 const experiences = [
     {
-        company: 'Cybergen',
-        role: 'MERN Stack Developer',
-        date: 'Sep 2024 – June 2025',
-        highlights: [
-            'Leading development teams and mentoring junior developers.'
-        ]
-    },
-    {
-        company: 'Global Hackathon',
-        role: 'International Hackathon Winner',
-        date: '2024',
-        highlights: [
-            'Won first place in a global coding competition.'
-        ]
-    },
-    {
         company: 'Saylani Institute SMIT - Faisalabad',
+        companyUrl: 'https://saylaniwelfareusa.com/en/services/education/technical-education/saylani-mass-it-training',
         role: 'Full Stack Developer Instructor',
         date: 'May 2023 – Present',
         highlights: [
-            'Trained over 600 students in Web Development and Web Designing.'
+            'Trained 600+ students in programming, web and mobile app development, and web designing (Word, Excel, PowerPoint).',
+            'Programming Languages and Technologies: HTML, CSS (Bootstrap 5), JavaScript (ES6), Tailwind CSS, TypeScript, DSA (LeetCode), React JS (Context API, Router, State Management), Next.js, NodeJS (ExpressJS, Authentication, API Endpoint Handling), NPM, MongoDB, Firebase, and React Native.',
+            'Hosting Platforms: Surge, Netlify, Vercel, and Firebase.',
+            'Students received training from me via these courses. See GitHub Repositories:',
+            'Web and Mobile Developer Batch 02: https://github.com/Fatimaarshad10/Web-and-Mobile-developer-Batch-no-02',
+            'Web Designing Batch 01: https://github.com/Fatimaarshad10/web-designing-batch-1',
+            'Web Designing Batch 02: https://github.com/Fatimaarshad10/web-designing-batch-2',
+            'Web Designing Batch 03: https://github.com/Fatimaarshad10/web-designing-batch-03',
+            'Web and Mobile Development Batch 03: https://github.com/Fatimaarshad10/web-and-mobile-development-batch-no-03',
         ]
     },
     {
-        company: 'Naxtech',
-        role: 'Node.js Backend Developer',
-        date: 'Aug 2023 – Feb 2024',
+        company: 'CyberGen - Faisalabad',
+        companyUrl: 'https://www.cybergen.com/',
+        role: 'Senior MERN Stack Developer',
+        date: 'Sep 2024 – June 2025',
         highlights: [
-            'Built and deployed complete applications.'
+            "As a Senior MERN Stack Developer, I've led and contributed to multiple live projects, including FlyZone, CyberGen, and GRIT (a project management tool). My work spans across React.js, Next.js, Bootstrap, and Node.js, where I specialize in debugging, feature development, and team leadership. I also manage server environments using cPanel, aaPanel, and even WordPress for full-stack delivery. My ability to adapt, lead, and solve problems under pressure makes me a reliable team player in fast-paced environments."
         ]
+    },
+    {
+        company: 'Naxtech - Faisalabad',
+        companyUrl: 'https://www.naxtech.com/',
+        role: 'Backend Developer',
+        date: 'Aug 2023 – Feb 2025',
+        highlights: [
+            'Languages & Frameworks: Node.js, Express.js, Socket.io',
+            'Databases: PostgreSQL, MongoDB (SQL & NoSQL)',
+            'Cloud Services: AWS (Lambda, SES, S3, EventBridge, Scheduler)',
+            'Messaging & Realtime: Redis, Socket.io, WebSockets',
+            'DevOps: Docker, GitLab CI/CD, Microservices architecture',
+            'Projects: Event Management App (PostgreSQL, AWS Mailer, Scheduler)',
+            'Projects: Profiler – a Job & Employment Management System with location-based search, OpenAI integration, SEO optimization, and long-running Lambda functions'
+          ]
+          
+    },
+    {
+        company: 'SunzTech',
+        role: 'Web Developer Intern',
+        date: 'June 2022 – Feb 2023',
+        highlights: [
+            'Integrated a React front-end with a WordPress back-end, converting static pages into dynamic React.js components.',
+            'Used fake product APIs to simulate backend data during early development, which helped strengthen my understanding of data fetching and component rendering.',
+            'Overcame challenges in API integration, taking nearly a month to fully resolve issues — a key milestone in my learning journey.',
+            'Handled various UI styles and forms using React, and also contributed to Shopify-based projects for e-commerce solutions.',
+            'Learned clean coding practices and real-world workflows under the guidance of senior developers.'
+          ]
     },
 ];
 
@@ -76,17 +98,49 @@ export default function ExperienceSection() {
                             <h3 className="text-2xl font-bold text-dark-500 mb-1">
                                 {experiences[active].role}
                             </h3>
-                            <p className="text-primary-400 font-medium mb-2">@{experiences[active].company}</p>
+                            <p className="text-primary-400 font-medium mb-2">
+                                @{
+                                    experiences[active].companyUrl ? (
+                                        <a href={experiences[active].companyUrl} target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-300 transition-colors">
+                                            {experiences[active].company}
+                                        </a>
+                                    ) : (
+                                        experiences[active].company
+                                    )
+                                }
+                            </p>
                             <p className="text-dark-600 font-mono text-sm mb-4">{experiences[active].date}</p>
                             <ul className="space-y-3">
-                                {experiences[active].highlights.map((h, i) => (
-                                    <li key={i} className="flex items-start gap-3">
-                                        <span className="text-primary-500 mt-1 flex-shrink-0">
-                                            <ArrowRight size={18} />
-                                        </span>
-                                        <span className="text-dark-600">{h}</span>
-                                    </li>
-                                ))}
+                                {experiences[active].highlights.map((h, i) => {
+                                    // Check for 'Title: URL' pattern
+                                    const match = h.match(/^(.*?):\s*(https?:\/\/\S+)/);
+                                    if (match) {
+                                        const [, title, url] = match;
+                                        return (
+                                            <li key={i} className="flex items-start gap-3">
+                                                <span className="text-primary-500 mt-1 flex-shrink-0">
+                                                    <ArrowRight size={18} />
+                                                </span>
+                                                <a
+                                                    href={url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="text-primary-400 underline hover:text-primary-300 transition-colors"
+                                                >
+                                                    {title}
+                                                </a>
+                                            </li>
+                                        );
+                                    }
+                                    return (
+                                        <li key={i} className="flex items-start gap-3">
+                                            <span className="text-primary-500 mt-1 flex-shrink-0">
+                                                <ArrowRight size={18} />
+                                            </span>
+                                            <span className="text-dark-600">{h}</span>
+                                        </li>
+                                    );
+                                })}
                             </ul>
                         </motion.div>
                     </div>

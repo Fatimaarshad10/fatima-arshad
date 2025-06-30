@@ -50,7 +50,7 @@ const Hero = () => {
                         className="mb-4"
                     >
                         <span className="inline-block bg-primary-500/10 text-primary-400 border border-primary-500/20 px-3 py-2 md:px-4 md:py-2 rounded-full font-medium text-sm md:text-base">
-                            Full-Stack Developer 
+                            Full-Stack Developer & Corporate Trainer
                         </span>
                     </motion.div>
 
@@ -67,7 +67,7 @@ const Hero = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
-                        className="text-sm sm:text-base md:text-lg text-dark-400 mb-8 max-w-xl"
+                        className="text-sm sm:text-base md:text-lg text-dark-400 mb-8 max-w-xl text-justify"
                     >
                         I'm a Full Stack Developer and Trainer with hands-on industry experience and a strong background in teaching. I've worked with various international clients on full-scale web and mobile development projects. So far, I've trained over 600 students, many of whom are now thriving in the tech industry.
 
