@@ -8,7 +8,7 @@ import {
 } from 'react-icons/si'
 
 const skills = [
-    { name: "React", icon: SiReact, color: "text-cyan-400" },
+    { name: "React", icon: SiReact, color: "text-cyan-400 " },
     { name: "Next.js", icon: SiNextdotjs, color: "text-gray-200" },
     { name: "Node.js", icon: SiNodedotjs, color: "text-green-500" },
     { name: "Express", icon: SiExpress, color: "text-gray-400" },
