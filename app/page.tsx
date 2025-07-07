@@ -1,9 +1,9 @@
 import Hero from '@/components/Hero'
 import AboutSection from '@/components/AboutSection'
 import ExperienceSection from '@/components/ExperienceSection'
+import VolunteerCertificatesSection from '@/components/VolunteerCertificatesSection'
 import AnimatedSkills from '@/components/AnimatedSkills'
 import ProjectsSection from '@/components/ProjectsSection'
-import { Mail } from 'lucide-react'
 
 export default function Page() {
     return (
@@ -11,6 +11,7 @@ export default function Page() {
             <Hero />
             <AboutSection />
             <ExperienceSection />
+            <VolunteerCertificatesSection />
             <AnimatedSkills />
             <ProjectsSection />
             <main className="bg-dark-900 text-dark-600">

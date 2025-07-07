@@ -18,9 +18,7 @@ const AboutSection = () => {
                     <h1 className="text-4xl md:text-6xl font-extrabold">
                         <span className="text-primary-500">About</span> Me
                     </h1>
-                    <p className="mt-4 text-lg md:text-xl text-dark-600 max-w-3xl mx-auto">
-                        A passionate developer driven to craft impactful and innovative digital solutions that enhance user experiences
-                    </p>
+
                 </motion.div>
 
                 <div className="mt-8 flex flex-col lg:flex-row gap-8 items-center justify-center    ">
@@ -54,7 +52,7 @@ const AboutSection = () => {
                         viewport={{ once: true }}
                         className="relative order-1 lg:order-2"
                     >
-                        <div className="relative prose prose-invert prose-lg text-dark-600 lg:pl-8 p-4 backdrop-blur-sm z-10 text-justify">
+                        <div className="relative prose prose-invert prose-sm text-dark-600 lg:pl-8 p-4 backdrop-blur-sm z-10 text-justify">
                             <p>
                                 My journey began with a passion for art and digital drawing, which soon evolved into a fascination with technology. At 13, I was creating digital sketches; today, I build scalable web applications.
                             </p>

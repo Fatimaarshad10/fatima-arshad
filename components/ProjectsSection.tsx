@@ -3,20 +3,20 @@
 import ProjectCard from '@/components/ProjectCard'
 
 const projects = [
- {
-        name: 'Molar App',
-        description: 'Real-time weather dashboard with location-based forecasts and interactive maps.',
-        tech: ['Vue.js', 'Node.js', 'OpenWeather API', 'Chart.js'],
+    {
+        name: 'Molar (Dental Practice Management)',
+        description: 'A comprehensive dental practice management application. Features include patient records, appointment scheduling, billing, and secure communication. Built as a modern web app for dental professionals. My role: PERN Stack Developer (React, Node.js, Express, PostgreSQL, EmailJS).',
+        tech: ['PostgreSQL', 'Express', 'React', 'Node.js', 'EmailJS'],
         image: "/assets/molar.png",
-        liveUrl: '',
-        year: '2025',
-        category: 'frontend'
+        liveUrl: 'https://app.molarlabs.com/login',
+        year: '2024',
+        category: 'Full Stack'
     },
 
-{
+    {
         name: 'Pine Straw University',
-        description: 'Modern portfolio website built with Next.js and Tailwind CSS.',
-        tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        description: 'Modern portfolio website built with Next.js and Tailwind CSS. Includes a Pine Straw Calculator app with authentication, a calculation page for pine straw needs, and PDF download functionality. Developed core features using Node.js, Express, HTML, and JavaScript.',
+        tech: ['HTML', 'JavaScript', 'Tailwind CSS', 'Node.js', 'Express'],
         image: "/assets/pinestraw.png",
         liveUrl: 'https://pinestrawuniversity.com/',
         year: '2024',
@@ -24,44 +24,44 @@ const projects = [
     },
     {
         name: '321Vets',
-        description: 'Real-time chat application with AI-powered responses and sentiment analysis.',
-        tech: ['Python', 'FastAPI', 'OpenAI', 'WebSocket'],
+        description: 'Real-time chat application with AI-powered responses and sentiment analysis. Developed using React.js with a modular component structure and custom details pages for enhanced user experience.',
+        tech: ['React', 'Tailwind CSS',],
         image: "/assets/321.png",
         liveUrl: 'https://321vets.com/',
         year: '2023',
         category: 'AI/ML'
     },
-      
-       {
+
+    {
         name: 'Tech Wizz',
-        description: 'Cross-platform app for tracking workouts, nutrition, and fitness goals.',
-        tech: ['React Native', 'Firebase', 'Redux', 'Chart.js'],
+        description: 'Business portfolio website built with Next.js, integrated with Notion for content management, and enhanced with Framer Motion animations for a dynamic user experience.',
+        tech: ['Next.js', 'Notion', 'Framer Motion', 'React', 'Firebase', 'Redux', 'Chart.js'],
         image: "/assets/427shots_so.png",
         githubUrl: 'https://github.com/Fatimaarshad10/NextJS-Portfolio-',
         year: '2024',
         category: 'Frontend'
     },
-        {
+    {
         name: "Let's Play App ",
-        description: 'A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard.',
-        tech: [ 'Node.js', 'Postgresql', 'schedular', 'Express.js'],
+        description: 'Event management system with robust scheduling features. Backend managed using Node.js, Express, Socket.io, and PostgreSQL to handle real-time events and user interactions.',
+        tech: ['Node.js', 'Express', 'Socket.io', 'PostgreSQL'],
         image: "/assets/Let's_play.png",
         githubUrl: 'https://github.com/NaxtechGit/Event-Management-System-Backend-',
         year: '2024',
         category: 'Full Stack'
     },
-     {
+    {
         name: 'Profiler',
-        description: 'Cross-platform app for tracking workouts, nutrition, and fitness goals.',
-        tech: ['Node js', 'lambda', 'sqs', 'redis' , 'openai'],
+        description: 'Job management system featuring a QR scanner and advanced search algorithms. Utilizes Redis, AWS Lambda, OpenAI, and Node.js for fast, intelligent job matching and management.',
+        tech: ['Node.js', 'AWS Lambda', 'Redis', 'OpenAI', 'QR Scanner'],
         image: "/assets/profiler_01.png",
         liveUrl: 'https://dtkcfwfq66241.cloudfront.net/',
         year: '2024',
         category: 'Backend developer'
     },
-  
-   
-     
+
+
+
 ]
 
 const ProjectsSection = () => {

@@ -28,7 +28,10 @@ const experiences = [
         role: 'Senior MERN Stack Developer',
         date: 'Sep 2024 – June 2025',
         highlights: [
-            "As a Senior MERN Stack Developer, I've led and contributed to multiple live projects, including FlyZone, CyberGen, and GRIT (a project management tool). My work spans across React.js, Next.js, Bootstrap, and Node.js, where I specialize in debugging, feature development, and team leadership. I also manage server environments using cPanel, aaPanel, and even WordPress for full-stack delivery. My ability to adapt, lead, and solve problems under pressure makes me a reliable team player in fast-paced environments."
+            "As a Senior MERN Stack Developer, I've led and contributed to multiple live projects, including FlyZone, CyberGen, and GRIT (a project management tool). My work spans across React.js, Next.js, Bootstrap, and Node.js, where I specialize in debugging, feature development, and team leadership. I also manage server environments using cPanel, aaPanel, and even WordPress for full-stack delivery. My ability to adapt, lead, and solve problems under pressure makes me a reliable team player in fast-paced environments.",
+            'FlyZone: https://flyzone.ai/',
+            'Powerphase: https://powerphase.com/',
+            'GRIT: https://grit.cybergen.com/'
         ]
     },
     {
@@ -44,8 +47,8 @@ const experiences = [
             'DevOps: Docker, GitLab CI/CD, Microservices architecture',
             'Projects: Event Management App (PostgreSQL, AWS Mailer, Scheduler)',
             'Projects: Profiler – a Job & Employment Management System with location-based search, OpenAI integration, SEO optimization, and long-running Lambda functions'
-          ]
-          
+        ]
+
     },
     {
         company: 'SunzTech',
@@ -57,7 +60,7 @@ const experiences = [
             'Overcame challenges in API integration, taking nearly a month to fully resolve issues — a key milestone in my learning journey.',
             'Handled various UI styles and forms using React, and also contributed to Shopify-based projects for e-commerce solutions.',
             'Learned clean coding practices and real-world workflows under the guidance of senior developers.'
-          ]
+        ]
     },
 ];
 
